@@ -1,0 +1,81 @@
+.p-3.form-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.employee-form {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.data_form {
+  display: none;
+}
+/* Ảnh đại diện */
+.avatar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+
+  input {
+    display: none;
+  }
+
+  label {
+    background: #007bff;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+}
+
+/* Container chứa tất cả các input */
+.form-fields {
+  display: flex;
+  flex: 1;
+  gap: 15px; // Khoảng cách giữa các cột
+}
+
+/* Từng nhóm input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1; // Các cột có độ rộng đều nhau
+  max-width: fit-content;
+
+  .form-label {
+    max-width: 100px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  .form-input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+}

@@ -1,0 +1,105 @@
+<div class="p-3 form-account">
+  <form [formGroup]="caseForm" (ngSubmit)="onSubmit()" class="employee-form">
+    <div class="form-group">
+      <label for="username" class="form-label require">Tên Vụ Án</label>
+      <div class="form-input">
+        <input
+          id="username"
+          pInputText
+          formControlName="casename"
+          [class.invalid]="isFieldInvalid('casename')"
+        />
+        @if(isFieldInvalid('casename')) {
+        <div>
+          <small class="p-error">Tên vụ án là bắt buộc</small>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fullName" class="form-label require">Code Vụ Án</label>
+      <div class="form-input">
+        <input
+          id="fullName"
+          pInputText
+          formControlName="casecode"
+          [class.invalid]="isFieldInvalid('casecode')"
+        />
+        @if(isFieldInvalid('casecode')) {
+        <div>
+          <small class="p-error">Code vụ án là bắt buộc</small>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="roleId" class="form-label require">Mô Tả Vụ Án</label>
+      <div class="form-input">
+        <input
+          id="fullName"
+          pInputText
+          formControlName="description"
+          [class.invalid]="isFieldInvalid('description')"
+        />
+
+        @if(isFieldInvalid('description')) {
+        <div>
+          <small class="p-error">Mô tả là bắt buộc</small>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="departmentId" class="form-label require">Loại Vụ Án</label>
+      <div class="form-input">
+        <p-dropdown
+          id="departmentId"
+          formControlName="caseType"
+          [options]="listDepartments"
+          [optionValue]="'value'"
+          [optionLabel]="'key'"
+          [class.invalid]="isFieldInvalid('caseType')"
+        ></p-dropdown>
+        @if(isFieldInvalid('caseType')) {
+        <div>
+          <small class="p-error">Loại vụ án là bắt buộc</small>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="organizationId" class="form-label require">Phòng Ban</label>
+      <div class="form-input">
+        <p-dropdown
+          id="organizationId"
+          formControlName="departmentId"
+          [options]="listUnits"
+          [optionValue]="'value'"
+          [optionLabel]="'key'"
+          [class.invalid]="isFieldInvalid('departmentId')"
+        ></p-dropdown>
+        @if(isFieldInvalid('departmentId')) {
+        <div>
+          <small class="p-error">Phòng ban là bắt buộc</small>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="flex justify-content-end">
+      <button
+        pRipple
+        pButton
+        severity="secondary"
+        type="button"
+        label="Huỷ"
+        class="outline-none bg-none text-color mr-2"
+        (click)="onCloseModal()"
+      ></button>
+      <button pRipple pButton type="submit" label="Tạo"></button>
+    </div>
+  </form>
+</div>
