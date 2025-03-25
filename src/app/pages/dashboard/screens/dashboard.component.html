@@ -1,8 +1,39 @@
-<!-- <vks-table-common
-  [configHeader]="configHeader"
-  [data]="listAccount"
-  [virtualScroll]="true"
->
+<h1>DashBoard</h1>
+<h3>Biểu đồ thống kê loại hình vụ án</h3>
+<div class="dashboard-container">
+  <!-- Biểu đồ Cột -->
+  <div class="chart-container" style="width: 60%; height: 350px">
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [type]="'bar'"
+    >
+    </canvas>
+  </div>
 
-</vks-table-common> -->
-<h1>Màn dash board</h1>
+  <!-- Biểu đồ Tròn -->
+  <div class="chart-container">
+    <canvas baseChart [data]="doughnutChartData" [type]="'doughnut'"> </canvas>
+    <div>
+      <p>Tổng vụ án là: {{ total }}</p>
+    </div>
+  </div>
+</div>
+<h3>Thống kê loại án và top loại án xảy ra nhiều nhất</h3>
+<div class="dashboard-container-1">
+  <!-- Biểu đồ Tròn -->
+  <h3>Biểu đồ thống kê vụ án</h3>
+  <div class="chart-container">
+    <canvas
+      baseChart
+      [data]="doughnutDepartment"
+      [type]="'doughnut'"
+      [options]="doughnutChartOptions"
+    >
+      <div class="chart-container">
+        <p>Tổng vụ án là: {{ total }}</p>
+      </div>
+    </canvas>
+  </div>
+</div>

@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Button, ButtonDirective } from "primeng/button";
-import { MenuModule } from "primeng/menu";
-import { ToastModule } from "primeng/toast";
-import { Ripple } from "primeng/ripple";
+import { Button, ButtonDirective } from 'primeng/button';
+import { MenuModule } from 'primeng/menu';
+import { ToastModule } from 'primeng/toast';
+import { Ripple } from 'primeng/ripple';
 
-import { TableCommonComponent } from "../../shared//ui-common/table-common/table-common.component";
-import { FilterCommonComponent } from "../../shared/ui-common/filter-common/filter-common.component";
+import { TableCommonComponent } from '../../shared//ui-common/table-common/table-common.component';
+import { FilterCommonComponent } from '../../shared/ui-common/filter-common/filter-common.component';
 import { DashboardComponent } from './screens/dashboard.component';
-import { DashboardRoutingModule } from "./dashboard-routing.module";
-import { DashboardHttpService } from "./dashboard-http.service";
-import { DashboardStateService } from "./dashboard-state.service";
-
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { DashboardHttpService } from './dashboard-http.service';
+import { DashboardStateService } from './dashboard-state.service';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
-  declarations: [
-    DashboardComponent
-  ],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -26,9 +25,10 @@ import { DashboardStateService } from "./dashboard-state.service";
     MenuModule,
     ToastModule,
     Ripple,
-    FilterCommonComponent
+    FilterCommonComponent,
+    NgxEchartsModule,
+    NgChartsModule,
   ],
-  providers: [DashboardHttpService, DashboardStateService]
+  providers: [DashboardHttpService, DashboardStateService],
 })
-export class DashboardModule {
-}
+export class DashboardModule {}

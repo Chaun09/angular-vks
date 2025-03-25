@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { APP_CONFIG } from "@vks/environments/environment";
-import { Observable } from "rxjs";
+import { DashBoardManagementApiService } from '@vks/app/https/dashboard-management/dashboard-management-api.service';
 
 @Injectable()
 export class DashboardHttpService {
-
-  baseUrl = `${APP_CONFIG.baseUrl}/fakeapi`;
   constructor(
-    private http: HttpClient
-  ) { }
+    private dashboardManagementApiService: DashBoardManagementApiService
+  ) {}
 
-  getFakeAccountFromJsonServer() {
-    return this.http.get(this.baseUrl) as Observable<any>;
+  getData(params: any) {
+    if (!params) {
+      // Kiểm tra undefined trước khi gọi toString()
+      console.error('someVariable is undefined');
+    }
+    return this.dashboardManagementApiService.getData(params);
   }
 }

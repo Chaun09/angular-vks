@@ -28,7 +28,8 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './pages/login/login.component';
-
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -59,6 +60,8 @@ import { LoginComponent } from './pages/login/login.component';
     ReactiveFormsModule,
     SelectButtonModule,
     BrowserAnimationsModule,
+    NgxEchartsModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
